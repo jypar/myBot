@@ -17,7 +17,7 @@ jobs:
     env:
       DB_DATABASE: flyway_demo_db
       DB_USER: root
-      DB_PASSWORD: zhypar_1234
+      DB_PASSWORD: root
 
     steps:  
     - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Set up MySQL
-      run: sudo /usr/local/mysql/bin start
+      run: sudo /etc/init.d/mysql start
         mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
