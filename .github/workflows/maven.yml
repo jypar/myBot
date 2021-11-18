@@ -28,7 +28,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Set up MySQL
-      run: sudo /usr/local/mysql start
+      run: sudo /usr/local/mysql/bin start
         mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
