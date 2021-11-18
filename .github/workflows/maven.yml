@@ -17,7 +17,7 @@ jobs:
     env:
       DB_DATABASE: flyway_demo_db
       DB_USER: root
-      DB_PASSWORD: root
+      DB_PASSWORD: zhypar_1234
 
     steps:  
     - uses: actions/checkout@v2
